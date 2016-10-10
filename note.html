@@ -1,0 +1,77 @@
+<html lang="en" ng-app="eventsApp">
+
+<head>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="note.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="EventController.js"></script>
+
+
+</head>
+
+
+
+<body ng-controller="EventController">
+
+    <div ng-cloak="">
+
+        <nav class="navbar navbar-inverse">
+            <h1 class="head-one">Notes</h1>
+        </nav>
+
+
+        <div class="container">
+
+            <div class="col-xs-6 left-align">
+
+                <h3 for="title">Title</h3>
+                <input class="form-control input-lg" type="text" ng-model="event.title" id="title" ng-disabled="disTog.disBool" />
+                <div>
+                    <h3 for="description">Description<span class="button-align"><button class="btn btn-default" ng-class="disTog.togStatus" ng-click="forward()"><span class="glyphicon glyphicon-arrow-right"></span></button>
+                        </span>
+                        <span class="button-align"><button class="btn btn-default" ng-class="disTog.togStatus" ng-click="back()">
+                        <span class="glyphicon glyphicon-arrow-left"></span></button>
+                        </span>
+                    </h3>
+                </div>
+                <div class="text-pad">
+                    <textarea class="form-control" id="description" ng-change="addIter()" ng-model="event.text" rows="25" ng-disabled="disTog.disBool"></textarea>
+                </div>
+                <button class="btn btn-success" ng-class="disTog.togStatus" ng-click="saveAction()">Save</button>
+                <button class="btn btn-danger" ng-class="disTog.togStatus" ng-click="clearAction(event.clearState)">{{event.clearState}}</button>
+                <button class="btn btn-warning" ng-class="disTog.delStatus" ng-disabled="disTog.togStatus" ng-click="deleteNote()">Delete</button>
+
+            </div>
+
+            <div class="col-xs-6">
+
+                <h3>List<span class="button-align"><button class="btn btn-default" ng-click="addNote()"><span class="glychicon glyphicon-plus"></span></button>
+                    </span><span class="button-align" ng-hide="disTog.togText">Click to create new Note --></span>
+                </h3>
+
+                <div class="well">
+                    <ul class="list-group">
+                        <li ng-repeat="session in event.sessions track by $index" class="list-group-item {{session.color}} {{session.cursor}}" ng-mouseenter="mouseOver(session, true)"
+                            ng-mouseleave="mouseOver(session, false)" ng-class="session.status" ng-click="setActive(session)"><span class="black">{{session.title}}</span>
+                            <span class="list-title desc-color">{{session.desc}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="TextController.js"></script>
+
+
+
+
+</body>
+
+</html>

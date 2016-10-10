@@ -1,0 +1,91 @@
+.list-title {
+    padding-left: 10px;
+}
+
+.list-group-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: lightgray;
+    white-space: nowrap;
+}
+
+.head-one {
+    color: white;
+    padding-left: 25px;
+}
+.black {
+    color:black;
+}
+
+.white {
+    color: white;
+}
+
+.desc-color {
+    color: lightgray;
+}
+ .button-align {
+     float: right;
+ }
+
+ .bot-pad {
+     padding-bottom: 10px;
+ }
+
+ .disabled {
+     pointer-events: none;
+ }
+
+.hover-change {
+    background-color: lightblue;
+}
+
+.form-control {
+    resize: none;
+}
+
+.default-color {
+    background-color: white;
+}
+
+.well {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 615px;
+}
+
+
+.splash {
+    display: none;
+}
+
+[ng-cloak].splash {
+    display: block !important;
+}
+
+.splash h2{
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.default-cursor {
+    cursor: default;
+}
+
+.list-cursor {
+    cursor: pointer;
+}
+
+.text-pad {
+    padding-bottom: 10px;
+}
+
+
+.left-button {
+    padding-block-end: 25px;
+    padding-bottom: 25px;
+}
